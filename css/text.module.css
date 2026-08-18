@@ -1,0 +1,68 @@
+/* General headline styles */
+h1,
+h2,
+h3 {
+  font-family: var(
+    --headline-font
+  ); /* Use the headline font for all headings */
+  text-transform: capitalize;
+}
+
+/* Specific styles for H1 */
+h1 {
+  font-size: var(--font-h1); /* Set H1 font size */
+  line-height: calc(var(--font-h1) + 4px); /* Adjust line height dynamically */
+  max-width: 600px;
+}
+
+/* Specific styles for H2 */
+h2 {
+  font-size: var(--font-h2); /* Set H2 font size */
+  line-height: calc(var(--font-h2) + 4px); /* Adjust line height dynamically */
+}
+
+/* Specific styles for H3 */
+h3 {
+  font-size: var(--font-h3); /* Set H3 font size */
+  line-height: calc(var(--font-h3) + 4px); /* Adjust line height dynamically */
+}
+
+/* Text alignment utility classes */
+.u__u__center-text {
+  text-align: center; /* Center-align the text */
+}
+
+.u__end-text {
+  text-align: end; /* Align text to the end (right for LTR languages) */
+}
+
+/* Paragraph styles */
+p {
+  line-height: var(--line-h-main); /* Maintain consistent line height */
+  font-size: var(--text-main); /* Set the main text size */
+  max-width: 500px; /* Limit the width for better readability */
+}
+.u__max-500 p {
+  max-width: 600px;
+}
+/* u__underline utility class */
+.u__underline {
+  text-decoration: underline; /* Add an u__underline to the text */
+}
+
+/* Blockquote styles */
+blockquote {
+  font-size: 48px; /* Set large font size for emphasis */
+  font-family: var(--headline-font); /* Use the headline font */
+}
+
+/* Inline styling for H1 spans */
+h1 span {
+  font-style: italic; /* Italicize the text */
+  font-family: inherit; /* Inherit font family from parent */
+  font-size: calc(var(--font-h1) * 1.1); /* Increase font size dynamically */
+  text-align: end; /* Align text to the end */
+}
+.c__hero-title {
+  font-size: clamp(3.5rem, 3vw, 36rem);
+}

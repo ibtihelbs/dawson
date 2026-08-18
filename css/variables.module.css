@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "Poppins";
+  src: url(../assets/fonts/poppins/poppins-regular-webfont.woff2);
+}
+
+:root {
+  /* ==========================================================================
+     Dawson Landscaping & Maintenance Brand Palette
+     ========================================================================== */
+  --marine: #0f190c; /* Dark Forest Green from the Logo Typography */
+  --wine: #38512f; /* Deep Olive Leaf Green from right side of tree */
+  --black: #1d261a; /* Ultra-dark Charcoal Olive for readable text body */
+  --terracotta: #cca325; /* Warm Ochre/Mustard Accent Gold from left side of tree */
+  --sand: #a1b058; /* Bright Lime/Moss Green from center foliage accents */
+  --almond: #f1f0db; /* Premium warm cream background matching the logo card */
+  --white: #ffffff;
+
+  /* Color Hover & Interactive States (Tint Overrides) */
+  --75-marine: #325027; /* Lighter interaction green */
+  --75-wine: #48683d; /* Lighter interactive leaf green */
+  --75-black: #293625;
+  --75-terracotta: #e3b832; /* Vibrant glowing gold for CTA hover actions */
+  --75-sand: #b5c46b;
+  --75-almond: #faf9f0; /* Secondary ultra-light card background container */
+
+  /* ==========================================================================
+     Typography & Layout Tokens
+     ========================================================================== */
+  /* Fonts */
+  --headline-font: "Poppins", sans-serif;
+  --body-font: "Poppins", sans-serif;
+
+  /* Spacing */
+  --spacing-12: 12px;
+  --spacing-24: 24px;
+  --spacing-36: 36px;
+  --spacing-48: 48px;
+
+  /* Font sizes */
+  --font-h1: clamp(36px, 10vw, 64px);
+  --font-h2: clamp(30px, 8vw, 48px);
+  --font-h3: clamp(24px, 6vw, 36px);
+  --text-main: 20px;
+  --text-m: 14px;
+  --text-xs: 12px;
+  --text-button: 16px;
+
+  /* Line Heights */
+  --line-h-main: 24px;
+  --line-h-m: 22px;
+  --line-h-xs: 20px;
+  --border-radius: 32px;
+}

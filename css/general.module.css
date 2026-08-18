@@ -1,0 +1,273 @@
+body {
+  background-color: var(--almond);
+  color: var(--marine);
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bolder;
+}
+input,
+textarea {
+  padding: 1rem;
+  border: none;
+  border-radius: var(--border-radius);
+}
+button:not(.c__nav-toggle),
+.c__view-details {
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 1rem 2rem;
+  font-weight: bolder;
+  font-size: 16px;
+  font-family: inherit;
+}
+.c__btn {
+  text-transform: capitalize;
+
+  font-weight: bolder;
+  font-size: 20px;
+  font-family: inherit;
+}
+.c__contact {
+  align-self: start;
+}
+select {
+  font-size: 12px;
+  font-weight: normal;
+  border: var(--terracotta) 1px solid;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+}
+header {
+  position: absolute;
+  border: var(--marine) 1px solid;
+  width: 80%;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+  color: var(--marine);
+  text-transform: uppercase;
+}
+.c__nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.c__nav-wrap {
+  display: flex;
+
+  justify-content: space-between;
+  height: 32px;
+}
+.c__nav-wrap nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.c__sub-nav {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+section {
+  min-height: 50vh;
+  padding-top: 48px;
+}
+
+.c__hero-home {
+  height: 100vh;
+  align-items: center;
+}
+.c__hero-home img {
+  width: 100%;
+  object-fit: cover;
+  height: 80%;
+}
+/**destinations**/
+
+.c__card img {
+  height: 400px;
+  border-radius: 32px;
+}
+.c__cta {
+  background-color: var(--terracotta);
+  color: var(--almond);
+}
+
+.c__view-details {
+  border: var(--terracotta) 1px solid;
+  color: var(--terracotta);
+}
+/*c__restaurants*/
+.c__card-rec img {
+  height: 200px;
+  width: 100%;
+}
+/* c__accordion Styles */
+.families {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.c__accordion-header {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.c__accordion-header:hover {
+  background-color: #f5f5f5;
+}
+
+.c__accordion-header::after {
+  content: "+";
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.c__accordion-header.active::after {
+  content: "-";
+}
+
+.c__accordion-content {
+  max-height: 0;
+  display: none;
+  transition: max-height 0.3s ease-out;
+}
+.c__accordion-content ul {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.c__accordion-content.show {
+  max-height: 500px;
+}
+
+.families ul {
+  list-style: none;
+  padding: 1rem 2rem;
+}
+
+.families li {
+  padding: 0.5rem 0;
+}
+/* Styles for c__restaurant descriptions */
+.c__restaurant-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* Show only 2 lines */
+  overflow: hidden;
+  line-clamp: 2;
+}
+#newsletter {
+  background-image: url(../assets/images/newsletter.jpg);
+  background-size: cover;
+  color: var(--almond);
+}
+#deals {
+  background-image: url(../assets/images/deal.jpg);
+  width: 100vw;
+  color: var(--white);
+  border-radius: var(--border-radius);
+}
+.more-text {
+  display: none; /* Hide additional text by default */
+}
+.c__card {
+  padding: 1rem;
+}
+.c__card-hotel img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius);
+  object-fit: cover;
+}
+.c__card-hotel {
+  background-color: var(--sand);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+}
+.c__slider .u__grid-col-3 {
+  display: flex;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+footer {
+  gap: 32px;
+}
+footer ul {
+  list-style: none;
+}
+.c__room img {
+  height: 250px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+.c__opinion > div {
+  max-width: 800px;
+  font-weight: bold;
+}
+.side-nav {
+  position: fixed;
+  top: 50%;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  transform: translateY(-50%);
+  right: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 5;
+  background-color: var(--almond);
+}
+.c__modal {
+  position: fixed;
+  z-index: 10;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--almond);
+  top: 0;
+  display: none;
+}
+.show {
+  display: flex;
+}
+.c__modal form {
+  width: 80%;
+  grid-template-rows: 1fr 1fr 2fr;
+}
+.c__modal textarea {
+  flex-grow: 1;
+}
+@media (max-width: 700px) {
+  .c__btn {
+    font-size: 14px;
+  }
+  .c__contact {
+    align-self: center;
+  }
+}

@@ -1,0 +1,15 @@
+@import url(./css/variables.module.css);
+@import url(./css/layout.module.css);
+@import url(./css/text.module.css);
+@import url(./css/general.module.css);
+@import url(./css/mobile.module.css);
+* {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  font-family: var(--body-font);
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
