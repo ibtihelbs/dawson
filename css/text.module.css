@@ -9,20 +9,21 @@ h3 {
 }
 
 /* Specific styles for H1 */
-h1 {
+h1,
+h2 {
   font-size: var(--font-h1); /* Set H1 font size */
   line-height: calc(var(--font-h1) + 4px); /* Adjust line height dynamically */
   max-width: 600px;
 }
 
 /* Specific styles for H2 */
-h2 {
+h3 {
   font-size: var(--font-h2); /* Set H2 font size */
   line-height: calc(var(--font-h2) + 4px); /* Adjust line height dynamically */
 }
 
 /* Specific styles for H3 */
-h3 {
+h4 {
   font-size: var(--font-h3); /* Set H3 font size */
   line-height: calc(var(--font-h3) + 4px); /* Adjust line height dynamically */
 }
