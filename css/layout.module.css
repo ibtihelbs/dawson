@@ -2,71 +2,89 @@
   display: flex;
   flex-direction: column;
 }
+
 .u__between {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: start;
 }
+
 .u__max-500 {
   max-width: 600px;
 }
+
 .u__max-800 {
   max-width: 800px;
 }
+
 .u__gap-24 {
   gap: 24px;
 }
+
 .u__gap-8 {
   gap: 8px !important;
 }
+
 .u__gap-12 {
   gap: 12px;
 }
+
 .u__gap-32 {
   gap: 32px;
 }
+
 .u__gap-48 {
   gap: 48px;
 }
+
 .u__center {
   align-items: center;
   justify-content: center;
 }
+
 .u__bottom {
   justify-content: end;
 }
+
 .u__grid-col-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
+
 .u__grid-col-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 1.5rem;
+  align-items: stretch;
 }
+
 .u__grid-col-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
+
 .u__grid-col-5 {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
 }
+
 .u__flex-row-1 {
   display: flex;
-  /*! gap: 1rem; */
   flex-wrap: wrap;
 }
+
 .u__span-2 {
   grid-column: span 2;
 }
+
 .u__self-end {
   place-self: end;
 }
+
 .u__self-start {
   place-self: start;
 }
@@ -74,14 +92,17 @@
 .u__center-vr {
   align-items: center;
 }
+
 .u__padding-x-5 {
   padding-left: 5rem;
   padding-right: 5rem;
 }
+
 .u__padding-x-1 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+
 .u__padding-y-5 {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -91,10 +112,76 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+
+/* Card grid mechanics */
+.c__card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease;
+}
+
+.c__card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  margin-bottom: 0.5rem;
+}
+
+.c__card .c__card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+/* Contact form structural layout */
+#contact form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#contact form .u__span-2 {
+  grid-column: span 2;
+}
+
+#contact form input,
+#contact form select,
+#contact form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  background-color: #fff;
+  font-family: var(--body-font);
+}
+
+#contact form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#contact form label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--marine);
+}
+
 @media (max-width: 700px) {
   .u__between {
     flex-direction: column;
-
     gap: 8px;
     height: 24%;
     justify-content: center;
