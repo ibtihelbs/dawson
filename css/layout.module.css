@@ -18,7 +18,7 @@
   gap: 24px;
 }
 .u__gap-8 {
-  gap: 8px;
+  gap: 8px !important;
 }
 .u__gap-12 {
   gap: 12px;

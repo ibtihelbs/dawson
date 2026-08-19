@@ -9,13 +9,19 @@ h3 {
 }
 
 /* Specific styles for H1 */
+
 h1,
 h2 {
   font-size: var(--font-h1); /* Set H1 font size */
   line-height: calc(var(--font-h1) + 4px); /* Adjust line height dynamically */
+  max-width: 650px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  letter-spacing: -3px;
+}
+h1 {
   max-width: 600px;
 }
-
 /* Specific styles for H2 */
 h3 {
   font-size: var(--font-h2); /* Set H2 font size */
@@ -41,7 +47,13 @@ h4 {
 p {
   line-height: var(--line-h-main); /* Maintain consistent line height */
   font-size: var(--text-main); /* Set the main text size */
-  max-width: 500px; /* Limit the width for better readability */
+  max-width: 700px; /* Limit the width for better readability */
+}
+.c__hero-title {
+  font-size: clamp(3.5rem, 3vw, 36rem);
+}
+.c__hero p {
+  max-width: 600px;
 }
 .u__max-500 p {
   max-width: 600px;
@@ -63,7 +75,4 @@ h1 span {
   font-family: inherit; /* Inherit font family from parent */
   font-size: calc(var(--font-h1) * 1.1); /* Increase font size dynamically */
   text-align: end; /* Align text to the end */
-}
-.c__hero-title {
-  font-size: clamp(3.5rem, 3vw, 36rem);
 }

@@ -2,6 +2,10 @@
   font-family: "Poppins";
   src: url(../assets/fonts/poppins/poppins-regular-webfont.woff2);
 }
+@font-face {
+  font-family: "title";
+  src: url(../assets/fonts/poppins/Poppins-ExtraBold.ttf);
+}
 
 :root {
   /* ==========================================================================
@@ -27,7 +31,7 @@
      Typography & Layout Tokens
      ========================================================================== */
   /* Fonts */
-  --headline-font: "Poppins", sans-serif;
+  --headline-font: "title", sans-serif;
   --body-font: "Poppins", sans-serif;
 
   /* Spacing */
@@ -46,7 +50,7 @@
   --text-button: 16px;
 
   /* Line Heights */
-  --line-h-main: 24px;
+  --line-h-main: 20px;
   --line-h-m: 22px;
   --line-h-xs: 20px;
   --border-radius: 32px;
