@@ -31,6 +31,8 @@ h3 {
 h4 {
   font-size: var(--font-h3);
   line-height: calc(var(--font-h3) + 4px);
+  letter-spacing: -1px;
+  font-weight: extra-bold;
 }
 
 /* Text alignment utility class (corrected) */
