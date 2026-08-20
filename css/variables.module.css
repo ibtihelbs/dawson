@@ -44,8 +44,8 @@
   --font-h1: clamp(36px, 10vw, 64px);
   --font-h2: clamp(30px, 8vw, 48px);
   --font-h3: clamp(24px, 6vw, 36px);
-  --text-main: 20px;
-  --text-m: 16px;
+  --text-main: 16px;
+  --text-m: 12px;
   --text-xs: 12px;
   --text-button: 16px;
 
