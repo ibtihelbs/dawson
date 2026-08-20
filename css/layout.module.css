@@ -84,7 +84,9 @@
 .u__span-2 {
   grid-column: span 2;
 }
-
+.u__span-3 {
+  grid-column: span 3;
+}
 .u__self-end {
   place-self: end;
 }
