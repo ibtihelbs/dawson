@@ -10,7 +10,7 @@ h3 {
 h1,
 h2 {
   font-size: var(--font-h1);
-  line-height: calc(var(--font-h1) - 4px);
+  line-height: 100%;
   max-width: 650px;
   text-transform: uppercase;
   font-weight: bolder;
