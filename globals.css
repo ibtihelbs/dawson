@@ -1,0 +1,944 @@
+/* ============================================================
+   FILE: global.css
+   DESCRIPTION: Combined global stylesheet for DAWSON website.
+   All styles are globally scoped. No CSS modules.
+   ============================================================ */
+
+/* ============================================================
+   IMPORTS & FONTS
+   ============================================================ */
+
+@font-face {
+  font-family: "Poppins";
+  src: url(../assets/fonts/poppins/poppins-regular-webfont.woff2);
+}
+@font-face {
+  font-family: "title";
+  src: url(../assets/fonts/poppins/Poppins-ExtraBold.ttf);
+}
+
+/* ============================================================
+   ROOT VARIABLES
+   ============================================================ */
+
+:root {
+  /* ==========================================================================
+     Dawson Landscaping & Maintenance Brand Palette
+     ========================================================================== */
+  --marine: #0f190c; /* Dark Forest Green from the Logo Typography */
+  --wine: #38512f; /* Deep Olive Leaf Green from right side of tree */
+  --black: #1d261a; /* Ultra-dark Charcoal Olive for readable text body */
+  --terracotta: #cca325; /* Warm Ochre/Mustard Accent Gold from left side of tree */
+  --sand: #a1b058; /* Bright Lime/Moss Green from center foliage accents */
+  --almond: #f1f0db; /* Premium warm cream background matching the logo card */
+  --white: #ffffff;
+
+  /* Color Hover & Interactive States (Tint Overrides) */
+  --75-marine: #325027; /* Lighter interaction green */
+  --75-wine: #48683d; /* Lighter interactive leaf green */
+  --75-black: #293625;
+  --75-terracotta: #e3b832; /* Vibrant glowing gold for CTA hover actions */
+  --75-sand: #b5c46b;
+  --75-almond: #faf9f0; /* Secondary ultra-light card background container */
+
+  /* ==========================================================================
+     Typography & Layout Tokens
+     ========================================================================== */
+  /* Fonts */
+  --headline-font: "title", sans-serif;
+  --body-font: "Poppins", sans-serif;
+
+  /* Spacing */
+  --spacing-12: 12px;
+  --spacing-24: 24px;
+  --spacing-36: 36px;
+  --spacing-48: 48px;
+
+  /* Font sizes */
+  --font-h1: clamp(36px, 10vw, 64px);
+  --font-h2: clamp(30px, 8vw, 48px);
+  --font-h3: clamp(24px, 6vw, 36px);
+  --text-main: 20px;
+  --text-m: 16px;
+  --text-xs: 12px;
+  --text-button: 16px;
+
+  /* Line Heights */
+  --line-h-main: 20px;
+  --line-h-m: 22px;
+  --line-h-xs: 20px;
+  --border-radius: 32px;
+}
+
+/* ============================================================
+   GLOBAL RESETS & BASE STYLES
+   ============================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  font-family: var(--body-font);
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--almond);
+  color: var(--marine);
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+input,
+textarea {
+  padding: 1rem;
+  border: none;
+  border-radius: var(--border-radius);
+}
+
+/* Input focus states */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--terracotta);
+  box-shadow: 0 0 0 2px rgba(204, 163, 37, 0.25);
+}
+
+button:not(.c__nav-toggle),
+.c__view-details {
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 1rem 2rem;
+  font-weight: bolder;
+  font-size: 16px;
+  font-family: inherit;
+  text-transform: uppercase;
+}
+
+.c__btn {
+  text-transform: capitalize;
+  font-weight: bolder;
+  font-size: 20px;
+  font-family: inherit;
+}
+
+.c__contact {
+  align-self: start;
+}
+
+select {
+  font-size: 12px;
+  font-weight: normal;
+  border: var(--terracotta) 1px solid;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+}
+
+/* ============================================================
+   HEADER & NAVIGATION
+   ============================================================ */
+
+header {
+  position: absolute;
+  border: var(--marine) 1px solid;
+  width: 80%;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+  color: var(--marine);
+  text-transform: uppercase;
+}
+
+.c__nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.c__nav-wrap {
+  display: flex;
+  justify-content: space-between;
+  height: 32px;
+}
+
+.c__nav-wrap nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.c__sub-nav {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* ============================================================
+   LAYOUT UTILITY CLASSES
+   ============================================================ */
+
+.u__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.u__between {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: start;
+}
+
+.u__max-500 {
+  max-width: 600px;
+}
+
+.u__max-800 {
+  max-width: 800px;
+}
+
+.u__gap-24 {
+  gap: 24px;
+}
+
+.u__gap-8 {
+  gap: 8px !important;
+}
+
+.u__gap-12 {
+  gap: 12px;
+}
+
+.u__gap-32 {
+  gap: 32px;
+}
+
+.u__gap-48 {
+  gap: 48px;
+}
+
+.u__center {
+  align-items: center;
+  justify-content: center;
+}
+
+.u__bottom {
+  justify-content: end;
+}
+
+.u__grid-col-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.u__grid-col-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.u__grid-col-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.u__grid-col-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.u__flex-row-1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.u__span-2 {
+  grid-column: span 2;
+}
+
+.u__self-end {
+  place-self: end;
+}
+
+.u__self-start {
+  place-self: start;
+}
+
+.u__center-vr {
+  align-items: center;
+}
+
+.u__padding-x-5 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+.u__padding-x-2 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.u__padding-x-1 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.u__padding-y-5 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.u__padding-y-1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.u__padding-y-2 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Card grid mechanics */
+.c__card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2rem;
+  background-color: var(--75-almond);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease;
+}
+
+.c__card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  margin-bottom: 0.5rem;
+}
+
+.c__card .c__card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+/* Contact form structural layout */
+#contact form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#contact form .u__span-2 {
+  grid-column: span 2;
+}
+
+#contact form input,
+#contact form select,
+#contact form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  background-color: #fff;
+  font-family: var(--body-font);
+}
+
+#contact form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#contact form label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--marine);
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+
+/* General headline styles */
+h1,
+h2,
+h3 {
+  font-family: var(--headline-font);
+  text-transform: capitalize;
+}
+
+/* Specific styles for H1 */
+h1,
+h2 {
+  font-size: var(--font-h1);
+  line-height: calc(var(--font-h1) + 4px);
+  max-width: 650px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  letter-spacing: -3px;
+}
+
+h1 {
+  max-width: 600px;
+}
+
+/* Specific styles for H2 */
+h3 {
+  font-size: var(--font-h2);
+  line-height: calc(var(--font-h2) + 4px);
+}
+
+/* Specific styles for H3 */
+h4 {
+  font-size: var(--font-h3);
+  line-height: calc(var(--font-h3) + 4px);
+}
+
+/* Text alignment utility class (corrected) */
+.u__center-text {
+  text-align: center;
+}
+
+.u__end-text {
+  text-align: end;
+}
+
+/* Paragraph styles */
+p {
+  line-height: var(--line-h-main);
+  font-size: var(--text-main);
+  max-width: 700px;
+}
+.small {
+  font-size: var(--text-m);
+  line-height: var(--line-h-m);
+  max-width: 560px;
+}
+.c__hero-title {
+  font-size: clamp(3.5rem, 3vw, 36rem);
+  font-family: var(--headline-font);
+  text-transform: uppercase;
+}
+
+.c__hero p {
+  max-width: 600px;
+}
+
+.u__max-500 p {
+  max-width: 600px;
+}
+
+/* underline utility class */
+.u__underline {
+  text-decoration: underline;
+}
+
+/* Blockquote styles */
+blockquote {
+  font-size: 48px;
+  font-family: var(--headline-font);
+}
+
+/* Inline styling for H1 spans */
+h1 span {
+  font-style: italic;
+  font-family: inherit;
+  font-size: calc(var(--font-h1) * 1.1);
+  text-align: end;
+}
+
+/* ============================================================
+   SECTIONS & HERO
+   ============================================================ */
+
+section {
+  min-height: 50vh;
+  padding-top: 48px;
+  padding: 2rem 4rem;
+}
+
+.c__hero-home {
+  height: 100vh;
+  align-items: center;
+}
+
+.c__hero-home img {
+  width: 100%;
+  object-fit: cover;
+  height: 80%;
+}
+
+.c__card img {
+  height: 400px;
+  border-radius: 32px;
+}
+
+/* CTA and view-details colors & borders */
+.c__cta {
+  background-color: var(--terracotta);
+  color: var(--almond);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.c__cta:hover {
+  background-color: var(--75-terracotta);
+}
+
+.c__view-details {
+  background: transparent;
+  border: 1px solid var(--terracotta);
+  color: var(--terracotta);
+  padding: 0.75rem 2rem;
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.c__view-details:hover {
+  background-color: var(--terracotta);
+  color: var(--almond);
+}
+
+/* Restaurant card */
+.c__card-rec img {
+  height: 200px;
+  width: 100%;
+}
+
+/* Accordion styles */
+.families {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.c__accordion-header {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.c__accordion-header:hover {
+  background-color: #f5f5f5;
+}
+
+.c__accordion-header::after {
+  content: "+";
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.c__accordion-header.active::after {
+  content: "-";
+}
+
+.c__accordion-content {
+  max-height: 0;
+  display: none;
+  transition: max-height 0.3s ease-out;
+}
+
+.c__accordion-content ul {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.c__accordion-content.show {
+  max-height: 500px;
+  display: block;
+}
+
+.families ul {
+  list-style: none;
+  padding: 1rem 2rem;
+}
+
+.families li {
+  padding: 0.5rem 0;
+}
+
+/* Restaurant description clamp */
+.c__restaurant-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-clamp: 2;
+}
+
+#newsletter {
+  background-image: url(../assets/images/newsletter.jpg);
+  background-size: cover;
+  color: var(--almond);
+}
+
+#deals {
+  background-image: url(../assets/images/deal.jpg);
+  width: 100vw;
+  color: var(--white);
+  border-radius: var(--border-radius);
+}
+
+.more-text {
+  display: none;
+}
+
+.c__slider .u__grid-col-3 {
+  display: flex;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+footer {
+  gap: 32px;
+  background-color: var(--marine);
+  color: var(--almond);
+}
+
+footer ul {
+  list-style: none;
+}
+
+.c__room img {
+  height: 250px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+.c__opinion > div {
+  max-width: 800px;
+  font-weight: bold;
+}
+
+.side-nav {
+  position: fixed;
+  top: 50%;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  transform: translateY(-50%);
+  right: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 5;
+  background-color: var(--almond);
+}
+
+.c__modal {
+  position: fixed;
+  z-index: 10;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--almond);
+  top: 0;
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
+.c__modal form {
+  width: 80%;
+  grid-template-rows: 1fr 1fr 2fr;
+}
+
+.c__modal textarea {
+  flex-grow: 1;
+}
+.c_user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.c_user-info img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+#benefits .c__card:first-child {
+  background-color: var(--75-wine);
+  color: var(--almond);
+}
+#benefits .c__card:nth-child(2) {
+  background-color: var(--75-sand);
+  color: var(--almond);
+}
+#benefits .c__card:last-child {
+  background-color: var(--75-terracotta);
+  color: var(--almond);
+}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+
+.c__testimonial-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.c__testimonial-card .rate {
+  display: flex;
+  gap: 4px;
+  color: var(--terracotta);
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.c__testimonial-card .c_user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.c__testimonial-card .c_user-info img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ============================================================
+   PROJECT COMPARISON GRID (Before/After)
+   ============================================================ */
+
+.project-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.project-comparison-grid .badge--before,
+.project-comparison-grid .badge--after {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: var(--marine);
+  color: var(--almond);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.project-comparison-grid .badge--after {
+  background-color: var(--terracotta);
+  left: auto;
+  right: 12px;
+}
+
+/* ============================================================
+   CUSTOM MAP FORM INTEGRATION
+   ============================================================ */
+
+.map-form-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+}
+
+.map-form-wrapper iframe {
+  border: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  border-radius: var(--border-radius);
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE STYLES
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .c__nav-toggle {
+    display: flex;
+  }
+
+  .c__nav.show {
+    display: flex;
+    color: black;
+  }
+
+  .c__nav-wrap nav {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 110%;
+    right: 20px;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .upper-footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .upper-footer ul {
+    display: none;
+  }
+
+  .show {
+    display: flex !important;
+  }
+
+  .c__slider {
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .c__slider .c__card {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 100%;
+  }
+
+  .c__slider img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  /* Mobile grid overrides */
+  .u__grid-col-5,
+  .u__grid-col-4,
+  .u__grid-col-3,
+  .u__grid-col-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .u__span-2 {
+    grid-column: 1;
+  }
+
+  .u__padding-x-5 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .u__padding-y-5 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .u__gap-12 {
+    gap: 8px;
+  }
+
+  .c__sub-nav {
+    flex-wrap: wrap;
+  }
+
+  blockquote {
+    font-size: 32px;
+  }
+
+  /* Single-column form inputs */
+  #contact form {
+    grid-template-columns: 1fr;
+  }
+
+  #contact form .u__span-2 {
+    grid-column: 1;
+  }
+
+  .c__card img {
+    height: 200px;
+  }
+
+  .map-form-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .map-form-wrapper iframe {
+    min-height: 300px;
+  }
+
+  .project-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .c__btn {
+    font-size: 14px;
+  }
+  .c__contact {
+    align-self: center;
+  }
+}
+
+/* ============================================================
+   ADDITIONAL MEDIA QUERY (up to 700px)
+   ============================================================ */
+
+@media (max-width: 700px) {
+  .u__between {
+    flex-direction: column;
+    gap: 8px;
+    height: 24%;
+    justify-content: center;
+  }
+}
