@@ -10,7 +10,7 @@ h3 {
 h1,
 h2 {
   font-size: var(--font-h1);
-  line-height: calc(var(--font-h1) + 4px);
+  line-height: calc(var(--font-h1) - 4px);
   max-width: 650px;
   text-transform: uppercase;
   font-weight: bolder;
@@ -50,7 +50,7 @@ p {
 }
 .small {
   font-size: var(--text-m);
-  line-height: var(--line-h-m);
+  line-height: var(--line-h-xs);
   max-width: 560px;
 }
 .c__hero-title {

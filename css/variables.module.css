@@ -41,9 +41,9 @@
   --spacing-48: 48px;
 
   /* Font sizes */
-  --font-h1: clamp(36px, 10vw, 64px);
+  --font-h1: clamp(36px, 6vw, 48px);
   --font-h2: clamp(30px, 8vw, 48px);
-  --font-h3: clamp(24px, 6vw, 36px);
+  --font-h3: clamp(24px, 1vw, 36px);
   --text-main: 16px;
   --text-m: 12px;
   --text-xs: 12px;
@@ -52,6 +52,6 @@
   /* Line Heights */
   --line-h-main: 20px;
   --line-h-m: 22px;
-  --line-h-xs: 20px;
+  --line-h-xs: 16px;
   --border-radius: 32px;
 }
