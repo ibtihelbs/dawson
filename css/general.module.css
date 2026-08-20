@@ -108,6 +108,7 @@ header {
 section {
   min-height: 50vh;
   padding-top: 48px;
+  padding: 2rem 4rem;
 }
 
 .c__hero-home {
@@ -257,19 +258,6 @@ section {
   display: none;
 }
 
-.c__card-hotel img {
-  width: 100%;
-  height: 100%;
-  border-radius: var(--border-radius);
-  object-fit: cover;
-}
-
-.c__card-hotel {
-  background-color: var(--sand);
-  border-radius: var(--border-radius);
-  padding: 1.5rem;
-}
-
 .c__slider .u__grid-col-3 {
   display: flex;
   gap: 1rem;
@@ -278,6 +266,8 @@ section {
 
 footer {
   gap: 32px;
+  background-color: var(--marine);
+  color: var(--almond);
 }
 
 footer ul {
@@ -332,7 +322,30 @@ footer ul {
 .c__modal textarea {
   flex-grow: 1;
 }
-
+.c_user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.c_user-info img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+#benefits .c__card:first-child {
+  background-color: var(--75-wine);
+  color: var(--almond);
+}
+#benefits .c__card:nth-child(2) {
+  background-color: var(--75-sand);
+  color: var(--almond);
+}
+#benefits .c__card:last-child {
+  background-color: var(--75-terracotta);
+  color: var(--almond);
+}
 @media (max-width: 700px) {
   .c__btn {
     font-size: 14px;
