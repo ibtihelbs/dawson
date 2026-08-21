@@ -258,12 +258,6 @@ section {
   display: none;
 }
 
-.c__slider .u__grid-col-3 {
-  display: flex;
-  gap: 1rem;
-  scroll-snap-type: x mandatory;
-}
-
 footer {
   gap: 32px;
   background-color: var(--marine);

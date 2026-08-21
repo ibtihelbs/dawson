@@ -38,6 +38,11 @@
     display: flex !important;
   }
 
+  .c__slider .u__grid-col-3 {
+    display: flex;
+    gap: 1rem;
+    scroll-snap-type: x mandatory;
+  }
   .c__slider {
     position: relative;
     overflow-x: hidden;

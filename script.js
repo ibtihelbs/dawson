@@ -3,10 +3,7 @@ const ul = document.querySelectorAll("footer ul.u__gap-8");
 const navToggle = document.querySelector(".c__nav-toggle");
 console.log(navToggle);
 const contact = document.querySelectorAll(".contact");
-const modal = document.querySelector(".c__modal");
-const accordionHeader = document.querySelectorAll(".c__accordion-header");
-const accordionContent = document.querySelectorAll(".c__accordion-content");
-console.log(contact);
+
 // Toggle visibility of footer lists
 h3.forEach((v, i) => {
   v.addEventListener("click", () => {
@@ -14,20 +11,7 @@ h3.forEach((v, i) => {
     ul[i].classList.toggle("show"); // Fix index offset
   });
 });
-accordionHeader.forEach((v, i) => {
-  v.addEventListener("click", () => {
-    console.log(i);
-    accordionContent[i].classList.toggle("show"); // Fix index offset
-  });
-});
-contact.forEach((v) => {
-  v.addEventListener("click", () => {
-    modal.classList.add("show");
-  });
-});
-modal.addEventListener("click", () => {
-  modal.classList.remove("show");
-});
+
 // Toggle nav menu
 navToggle.addEventListener("click", () => {
   document.querySelector(".c__nav").classList.toggle("show");
