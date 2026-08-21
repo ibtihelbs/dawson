@@ -125,10 +125,12 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-/* Card grid mechanics */
+
+/* Card grid mechanics – updated for uniform heights and spacing */
 .c__card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* ensures content is evenly distributed */
   height: 100%;
   padding: 1rem;
   background-color: var(--75-almond);
@@ -152,6 +154,17 @@
   gap: 0.75rem;
   align-items: center;
   padding-top: 1rem;
+}
+
+/* Spacing for before/after comparison grid inside project cards */
+.c__card .u__grid-col-2 {
+  margin-bottom: 1.5rem; /* separation from card actions */
+}
+
+/* Rating stars spacing inside testimonials */
+.rate {
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Contact form structural layout */

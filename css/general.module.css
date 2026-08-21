@@ -324,7 +324,7 @@ footer ul {
   height: 50px;
 }
 .c_user-info img {
-  width: 48px;
+  width: 48px !important;
   height: 48px;
   border-radius: 50%;
   object-fit: cover;

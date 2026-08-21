@@ -1,48 +1,79 @@
 const h3 = document.querySelectorAll("footer h4");
 const ul = document.querySelectorAll("footer ul.u__gap-8");
 const navToggle = document.querySelector(".c__nav-toggle");
-console.log(navToggle);
 const contact = document.querySelectorAll(".contact");
 
-// Toggle visibility of footer lists
+// ==========================================================================
+// Toggle Visibility of Footer Lists
+// ==========================================================================
 h3.forEach((v, i) => {
   v.addEventListener("click", () => {
-    console.log(i);
-    ul[i].classList.toggle("show"); // Fix index offset
+    if (ul[i]) {
+      ul[i].classList.toggle("show");
+    }
   });
 });
 
-// Toggle nav menu
-navToggle.addEventListener("click", () => {
-  document.querySelector(".c__nav").classList.toggle("show");
-});
-const gridContainer = document.querySelector(".c__slider .u__grid-col-3");
+// ==========================================================================
+// Toggle Main Mobile Navigation Menu
+// ==========================================================================
+if (navToggle) {
+  navToggle.addEventListener("click", () => {
+    const navMenu = document.querySelector(".c__nav");
+    if (navMenu) {
+      navMenu.classList.toggle("show");
+    }
+  });
+}
 
-let toScroll = 0;
-let slideWidth = gridContainer.firstElementChild.offsetWidth; // Initial slide width
-const totalSlides = gridContainer.children.length;
+// ==========================================================================
+// Slider Engine Factory
+// ==========================================================================
+function initializeAutoplaySlider(containerSelector, intervalTime = 2000) {
+  const gridContainer = document.querySelector(containerSelector);
+  if (!gridContainer || !gridContainer.firstElementChild) return;
 
-const updateSlideWidth = () => {
-  const gap = parseInt(getComputedStyle(gridContainer).columnGap || 0, 10);
-  slideWidth = gridContainer.firstElementChild.offsetWidth + gap;
-};
-updateSlideWidth();
-window.addEventListener("resize", updateSlideWidth);
+  let toScroll = 0;
+  let slideWidth = gridContainer.firstElementChild.offsetWidth;
 
-setInterval(() => {
-  toScroll -= slideWidth;
-  if (
-    Math.abs(toScroll) >=
-    gridContainer.scrollWidth - gridContainer.offsetWidth
-  ) {
-    toScroll = 0; // Reset to the beginning
-    gridContainer.style.transition = "none";
-    gridContainer.style.transform = `translateX(${toScroll}px)`;
-    setTimeout(() => {
+  const updateSlideWidth = () => {
+    const gap = parseInt(getComputedStyle(gridContainer).columnGap || "0", 10);
+    slideWidth = gridContainer.firstElementChild.offsetWidth + gap;
+  };
+
+  // Run initial calculation and attach to viewport resizes
+  updateSlideWidth();
+  window.addEventListener("resize", updateSlideWidth);
+
+  // Core Slider Animation Interval
+  setInterval(() => {
+    toScroll -= slideWidth;
+
+    // Check if the scroll offset has reached the absolute end of the boundary tracks
+    if (
+      Math.abs(toScroll) >=
+      gridContainer.scrollWidth - gridContainer.offsetWidth
+    ) {
+      toScroll = 0; // Seamless reset to first slide position
+      gridContainer.style.transition = "none";
+      gridContainer.style.transform = `translateX(${toScroll}px)`;
+      setTimeout(() => {
+        gridContainer.style.transition = "transform 0.5s ease-in-out";
+      }, 50);
+    } else {
+      gridContainer.style.transform = `translateX(${toScroll}px)`;
       gridContainer.style.transition = "transform 0.5s ease-in-out";
-    });
-  } else {
-    gridContainer.style.transform = `translateX(${toScroll}px)`;
-    gridContainer.style.transition = "transform 0.5s ease-in-out";
-  }
-}, 2000);
+    }
+  }, intervalTime);
+}
+
+// ==========================================================================
+// Initialize Dynamic Layout Sliders
+// ==========================================================================
+window.addEventListener("DOMContentLoaded", () => {
+  // 1. Core Services Carousel Loop
+  initializeAutoplaySlider("#services .c__slider .u__grid-col-3", 2000);
+
+  // 2. Client Testimonials Carousel Loop (Targets your testimonials selector)
+  initializeAutoplaySlider("#testimonials .c__slider .u__grid-col-3", 3000);
+});
