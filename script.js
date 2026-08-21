@@ -1,4 +1,4 @@
-const h3 = document.querySelectorAll("footer h3");
+const h3 = document.querySelectorAll("footer h4");
 const ul = document.querySelectorAll("footer ul.u__gap-8");
 const navToggle = document.querySelector(".c__nav-toggle");
 console.log(navToggle);
